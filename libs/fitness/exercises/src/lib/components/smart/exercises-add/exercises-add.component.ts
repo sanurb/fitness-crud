@@ -9,6 +9,7 @@ import { ValidExerciseFormModel, exerciseForm } from '../../../models/exercise-f
 import { CrudCreateState } from '@fitness-crud/shared/data-access-crud-state';
 import { Exercise } from '../exercises/exercise.type';
 import { exerciseFormValidations } from '../../../validations/exercise-form.validations';
+import { ExercisesFormUiComponent } from '../../ui/exercises-form/exercises-form.ui.component';
 
 @Component({
   selector: 'fitness-crud-exercises-add',
@@ -21,6 +22,7 @@ import { exerciseFormValidations } from '../../../validations/exercise-form.vali
     FormsModule,
     RouterLink,
     BaseLayoutCrudCreateUiComponent,
+    ExercisesFormUiComponent
   ],
   templateUrl: './exercises-add.component.html',
   styleUrl: './exercises-add.component.scss',

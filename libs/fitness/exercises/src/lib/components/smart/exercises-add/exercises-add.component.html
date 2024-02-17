@@ -1,6 +1,6 @@
 <simplified-base-layout-crud-create
   (closeDrawer)="createState.goBack()"
-  singularLabel="channel"
+  singularLabel="exercise"
   icon="bullhorn"
 >
   <ng-container simplified-base-layout-crud-create-form>
@@ -13,8 +13,8 @@
       (formValueChange)="createState.setFormValue($event)"
     >
       <fieldset [disabled]="vm.formDisabled">
-        <!-- <simplified-channels-form [formValue]="vm.form">
-        </simplified-channels-form> -->
+        <fitness-crud-exercises-form [formValue]="vm.form">
+        </fitness-crud-exercises-form>
       </fieldset>
     </form>
   </ng-container>
