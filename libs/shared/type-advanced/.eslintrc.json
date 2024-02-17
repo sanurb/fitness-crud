@@ -1,14 +1,7 @@
 {
+  "extends": ["../../../.eslintrc.base.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
-    },
     {
       "files": ["*.ts"],
       "extends": [
@@ -20,7 +13,6 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "fitnessCrud",
             "style": "camelCase"
           }
         ],
@@ -28,7 +20,6 @@
           "error",
           {
             "type": "element",
-            "prefix": "fitness-crud",
             "style": "kebab-case"
           }
         ]
@@ -39,6 +30,5 @@
       "extends": ["plugin:@nx/angular-template"],
       "rules": {}
     }
-  ],
-  "extends": ["./.eslintrc.base.json"]
+  ]
 }

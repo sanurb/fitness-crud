@@ -1,0 +1,15 @@
+[simplified-control-wrapper] {
+  @apply mt-4;
+}
+
+.control-wrapper--invalid {
+  label {
+    @apply text-red-700 dark:text-red-500;
+  }
+
+  input[type='text'],
+  select,
+  textarea {
+    @apply bg-red-50 dark:bg-gray-700 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500;
+  }
+}

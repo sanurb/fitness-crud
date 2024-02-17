@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fitness-crud/shared/ui-forms": ["libs/shared/ui-forms/src/index.ts"],
+      "@fitness-crud/shared/util-forms": [
+        "libs/shared/util-forms/src/index.ts"
+      ],
+      "@fitness-crud/type-advanced": ["libs/shared/type-advanced/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

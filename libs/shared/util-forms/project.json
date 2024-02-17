@@ -1,0 +1,9 @@
+{
+  "name": "util-forms",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/util-forms/src",
+  "prefix": "fitness-crud",
+  "tags": ["util"],
+  "projectType": "library",
+  "targets": {}
+}

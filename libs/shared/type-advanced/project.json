@@ -1,0 +1,9 @@
+{
+  "name": "type-advanced",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/type-advanced/src",
+  "prefix": "fitness-crud",
+  "tags": [],
+  "projectType": "library",
+  "targets": {}
+}
