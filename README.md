@@ -9,6 +9,10 @@
 
 To start the development server run `nx serve fitness-crud`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
+```bash
+npx nx run fitness-crud:serve --configuration=development
+```
+
 
 ## Generate code
 
