@@ -81,22 +81,18 @@ export class CrudListState<T extends { id: string }> extends SignalState<{
   }
 
   public deleteItem(id: string): void {
-    console.log('snapshot', this.snapshot.items)
     this.patch({
       itemsToDelete: [id],
     });
   }
 
   public closeDialog(): void {
-    console.log('closeDialog');
     this.patch({
       itemsToDelete: [],
     });
   }
 
   public performRemove(): void {
-    console.log('performRemove');
-    console.log('itemsToDelete', this.snapshot.itemsToDelete);
     this.entityState.deleteRange(this.snapshot.itemsToDelete);
     this.patch({
       itemsToDelete: [],

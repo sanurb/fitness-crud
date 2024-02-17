@@ -115,6 +115,7 @@ export class EntityStateLocalStorage<T extends { id: string }>
       item,
     ]);
     this.toast$$.next({ label: 'Successfully added!', type: 'success' });
+    this.itemsChangeSubject.next();
     this.patch({ acting: false });
     this.itemsChangeSubject.next();
   }
@@ -125,6 +126,7 @@ export class EntityStateLocalStorage<T extends { id: string }>
       this.apiEndpoint,
       this.snapshot.items.map((i) => (i.id === id ? item : i))
     );
+    this.itemsChangeSubject.next();
     this.toast$$.next({ label: 'Successfully updated!', type: 'success' });
     this.patch({ acting: false });
   }
