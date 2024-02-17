@@ -1,0 +1,4 @@
+<i *ngIf="icon" class="fa fa-{{icon}} {{hideLabelOnMobile?'mr-0 md:mr-2 lg:mr-2': 'mr-2'}}"></i>
+<span [class.hidden]="icon && hideLabelOnMobile" class="md:block w-full lg:block">
+  <ng-content></ng-content>
+</span>

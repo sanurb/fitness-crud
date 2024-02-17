@@ -1,0 +1,52 @@
+<simplified-base-layout-crud-update
+  [label]="vm.form.name ||''"
+  pluralLabel="channel"
+  icon="bullhorn"
+  (closeDrawer)="updateState.closeDrawer()"
+>
+  <ng-container simplified-base-layout-crud-update-form>
+    <form
+      id="form"
+      (ngSubmit)="submit()"
+      [suite]="suite"
+      [formValue]="vm.form"
+      (dirtyChange)="updateState.patch({formDirty: $event || false})"
+      (validChange)="updateState.patch({formValid: $event || false})"
+      (formValueChange)="updateState.setFormValue($event)"
+    >
+      <fieldset [disabled]="vm.formDisabled">
+        <fitness-crud-exercises-form [formValue]="vm.form">
+        </fitness-crud-exercises-form>
+      </fieldset>
+    </form>
+  </ng-container>
+  <ng-container simplified-base-layout-crud-update-footer>
+    <button
+      class="w-full"
+      type="button"
+      simplified-button
+      buttonType="red"
+      (click)="updateState.delete()"
+    >
+      Delete
+    </button>
+    <button class="w-full" form="form" type="submit" simplified-button>
+      Update
+    </button>
+    <button
+      class="w-full"
+      type="button"
+      simplified-button
+      buttonType="alternative"
+      routerLink="../"
+    >
+      Cancel
+    </button>
+  </ng-container>
+</simplified-base-layout-crud-update>
+<simplified-delete-modal
+  [label]="vm.form.name || ''"
+  *ngIf="vm.deleteOpen"
+  (decline)="updateState.closeDialog()"
+  (approve)="updateState.performRemove()"
+></simplified-delete-modal>

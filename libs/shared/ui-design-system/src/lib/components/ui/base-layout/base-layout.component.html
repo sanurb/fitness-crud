@@ -1,0 +1,31 @@
+<simplified-navbar
+  [avatar]="avatar"
+  [username]="username"
+  [search]="search"
+  (searchChange)="searchChange.emit($event)"
+  (signout)="signout.emit()"
+  (toggleSidebar)="toggleSidebar()"
+>
+  <ng-container simplified-navbar-logo>
+    <ng-content select="[simplified-base-layout-logo]"></ng-content>
+  </ng-container>
+</simplified-navbar>
+<div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
+  <simplified-sidebar [open]="sidebarOpen()">
+    <ng-content select="[simplified-base-layout-sidebar]"></ng-content>
+  </simplified-sidebar>
+  <div
+    class="relative w-full h-full overflow-y-auto bg-white lg:ml-64 sm:ml-64 dark:bg-gray-900"
+  >
+    <div
+      class="border-gray-200 rounded-lg dark:border-gray-700 dark:bg-gray-900 mt-2"
+    >
+      <ng-content select="[simplified-base-layout-content]"></ng-content>
+    </div>
+  </div>
+</div>
+<div
+  (click)="toggleSidebar()"
+  *ngIf="sidebarOpen()"
+  class="bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-30"
+></div>
