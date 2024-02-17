@@ -1,0 +1,10 @@
+<div class="z-60 fixed pt-4 pr-4 pl-4">
+  <simplified-toast
+    (closeToast)="onCloseToast(toast.id)"
+    class="flex"
+    [toastType]="toast.type"
+    *ngFor="let toast of toastsService.snapshot.toasts"
+  >
+    {{toast.label}}
+  </simplified-toast>
+</div>

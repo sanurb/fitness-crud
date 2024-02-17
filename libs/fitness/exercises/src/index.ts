@@ -1,0 +1,1 @@
+export { ExcercisesFeatRoutes } from './lib/lib.routes';

@@ -1,0 +1,86 @@
+<simplified-base-layout-crud-list
+    pluralLabel="exercises"
+    singularLabel="exercise"
+    (searchChange)="listState.patch({query: $event})"
+    [numberOfSelectedItems]="vm.numberOfSelectedItems"
+    (deleteSelected)="listState.onDeleteSelected()"
+>
+    <ng-container simplified-base-layout-crud-list-title> Exercises </ng-container>
+    <ng-container simplified-base-layout-crud-list-table>
+        <table simplified-table>
+        <thead simplified-table-head>
+            <tr>
+            <th simplified-table-th>
+                <input
+                simplified-input
+                type="checkbox"
+                [indeterminate]="vm.someSelected"
+                (ngModelChange)="listState.allSelectedChange($event)"
+                [ngModel]="vm.allSelected"
+                />
+            </th>
+            <th simplified-table-th>Name</th>
+            <th simplified-table-th class="hidden md:table-cell">Muscle</th>
+            <th simplified-table-th class="hidden md:table-cell">Difficulty</th>
+            <th simplified-table-th class="hidden md:table-cell"></th>
+            <th simplified-table-th></th>
+            </tr>
+        </thead>
+        <tbody simplified-table-tbody>
+            <tr *ngFor="let item of vm.items; trackBy: tracker; index as i" simplified-table-tr>
+              <td simplified-table-td>
+                <input
+                  simplified-input
+                  type="checkbox"
+                  name="{{item.id}}"
+                  [ngModel]="vm.selectedItems[item.id]"
+                  (ngModelChange)="listState.selectItem($event, item.id)"
+                />
+              </td>
+              <td simplified-table-td>
+                <simplified-badge
+                ></simplified-badge>
+                {{item.name}}
+              </td>
+              <td simplified-table-td class="hidden md:table-cell">
+                <simplified-badge badgeType="green" class="inline-flex">
+                  {{item.muscle}}
+                </simplified-badge>
+              </td>
+              <td simplified-table-td class="hidden md:table-cell">
+                <simplified-badge badgeType="green" class="inline-flex">
+                  {{item.difficulty}}
+                </simplified-badge>
+              </td>
+              <td simplified-table-td class="flex justify-end">
+                <button
+                  simplified-button
+                  icon="pencil"
+                  [routerLink]="item.id.toString()"
+                >
+                  Edit
+                </button>
+                <button
+                  simplified-button
+                  buttonType="red"
+                  icon="trash"
+                  (click)="listState.deleteItem(item.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <tr *ngIf="vm.items.length ===0" simplified-table-tr>
+              <td simplified-table-td colspan="4">No exercises added yet</td>
+            </tr>
+          </tbody>
+        </table>
+    </ng-container>
+</simplified-base-layout-crud-list>
+<router-outlet></router-outlet>
+<simplified-delete-modal
+  *ngIf="vm.deleteModalOpen"
+  (decline)="listState.closeDialog()"
+  (approve)="listState.performRemove()"
+>
+</simplified-delete-modal>

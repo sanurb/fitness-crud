@@ -1,0 +1,63 @@
+<div class="flex justify-between content-center">
+  <div class="flex">
+    <button
+      class="m-2 ml-4"
+      simplified-button
+      icon="calendar"
+      buttonType="default"
+      (click)="goToToday()"
+    >
+      Today
+    </button>
+    <div class="flex">
+      <button
+        class="m-2"
+        simplified-button
+        buttonType="dark"
+        (click)="customPrev()"
+      >
+        <i class="fa fa-chevron-left"></i>
+      </button>
+      <button
+        class="m-2"
+        simplified-button
+        buttonType="dark"
+        (click)="customNext()"
+      >
+        <i class="fa fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="flex">
+    <button
+      class="m-2"
+      simplified-button
+      [buttonType]="viewType === 'dayGridMonth'? 'purple':'dark'"
+      (click)="changeView('dayGridMonth')"
+    >
+      Month
+    </button>
+    <button
+      class="m-2"
+      simplified-button
+      [buttonType]="viewType === 'timeGridWeek'? 'purple':'dark'"
+      (click)="changeView('timeGridWeek')"
+    >
+      Week
+    </button>
+    <button
+      class="m-2 mr-4"
+      simplified-button
+      [buttonType]="viewType === 'timeGridDay'? 'purple':'dark'"
+      (click)="changeView('timeGridDay')"
+    >
+      Day
+    </button>
+  </div>
+</div>
+<full-calendar
+  class="text-gray-800 dark:text-white"
+  #calendar
+  [options]="calendarOptions"
+  [events]="calendarEvents"
+></full-calendar>

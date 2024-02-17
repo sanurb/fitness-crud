@@ -1,0 +1,18 @@
+<simplified-drawer (closeDrawer)="closeDrawer.emit()">
+  <ng-container simplified-drawer-title>
+    <i *ngIf="icon" class="fa-solid fa-{{icon}}"></i>
+    <span class="ml-3">Add {{singularLabel}}</span>
+  </ng-container>
+  <ng-container simplified-drawer-content>
+    <div class="flex flex-col">
+      <ng-content
+        select="[simplified-base-layout-crud-create-form]"
+      ></ng-content>
+      <div class="flex flex-row mt-4 pt-4">
+        <ng-content
+          select="[simplified-base-layout-crud-create-footer]"
+        ></ng-content>
+      </div>
+    </div>
+  </ng-container>
+</simplified-drawer>

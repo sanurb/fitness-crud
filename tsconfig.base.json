@@ -15,11 +15,36 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@fitness-crud/data-access-exercises": [
+        "libs/fitness/data-access-exercises/src/index.ts"
+      ],
+      "@fitness-crud/exercises": ["libs/fitness/exercises/src/index.ts"],
+      "@fitness-crud/shared/data-access-crud": [
+        "libs/shared/data-access-crud/src/index.ts"
+      ],
+      "@fitness-crud/shared/data-access-crud-state": [
+        "libs/shared/data-access-crud-state/src/index.ts"
+      ],
+      "@fitness-crud/shared/type-advanced": [
+        "libs/shared/type-advanced/src/index.ts"
+      ],
+      "@fitness-crud/shared/ui-design-system": [
+        "libs/shared/ui-design-system/src/index.ts"
+      ],
       "@fitness-crud/shared/ui-forms": ["libs/shared/ui-forms/src/index.ts"],
+      "@fitness-crud/shared/ui-toasts": ["libs/shared/ui-toasts/src/index.ts"],
+      "@fitness-crud/shared/util-array": [
+        "libs/shared/util-array/src/index.ts"
+      ],
+      "@fitness-crud/shared/util-config": [
+        "libs/shared/util-config/src/index.ts"
+      ],
       "@fitness-crud/shared/util-forms": [
         "libs/shared/util-forms/src/index.ts"
       ],
-      "@fitness-crud/type-advanced": ["libs/shared/type-advanced/src/index.ts"]
+      "@fitness-crud/shared/util-localstorage": [
+        "libs/shared/util-localstorage/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

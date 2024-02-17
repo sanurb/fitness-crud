@@ -1,5 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@angular/cdk/overlay-prebuilt.css';
 
-/* You can add global styles to this file, and also import other style files */
+.input-wrapper--invalid {
+  input[type='text'],
+  input[type='date'],
+  input[type='number'],
+  textarea {
+    @apply text-red-900  ring-red-300 placeholder:text-red-300 focus:ring-2 focus:ring-inset focus:ring-red-500;
+  }
+  label span {
+    @apply mt-2 text-sm text-red-800;
+  }
+}
+.input-wrapper__errors {
+  li {
+    @apply mt-2 text-sm text-red-600;
+  }
+}
+
+.fc-toolbar-title {
+  @apply pl-4;
+}
+.fc .fc-scrollgrid {
+  @apply border-0;
+}
+.fc .fc-event-title {
+  @apply font-normal;
+}
+.fc-theme-standard td,
+th {
+  @apply dark:border-gray-800;
+}

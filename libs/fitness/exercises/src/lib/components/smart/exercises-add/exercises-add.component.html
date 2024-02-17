@@ -1,0 +1,35 @@
+<simplified-base-layout-crud-create
+  (closeDrawer)="createState.goBack()"
+  singularLabel="channel"
+  icon="bullhorn"
+>
+  <ng-container simplified-base-layout-crud-create-form>
+    <form
+      id="form"
+      (ngSubmit)="submit()"
+      [suite]="suite"
+      [formValue]="vm.form"
+      (validChange)="createState.patch({formValid: $event || false})"
+      (formValueChange)="createState.setFormValue($event)"
+    >
+      <fieldset [disabled]="vm.formDisabled">
+        <!-- <simplified-channels-form [formValue]="vm.form">
+        </simplified-channels-form> -->
+      </fieldset>
+    </form>
+  </ng-container>
+  <ng-container simplified-base-layout-crud-create-footer>
+    <button class="w-full" form="form" type="submit" simplified-button>
+      Create
+    </button>
+    <button
+      class="w-full"
+      type="button"
+      simplified-button
+      buttonType="alternative"
+      routerLink="../"
+    >
+      Cancel
+    </button>
+  </ng-container>
+</simplified-base-layout-crud-create>
